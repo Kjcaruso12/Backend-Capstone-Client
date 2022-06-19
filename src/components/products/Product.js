@@ -3,7 +3,7 @@ import { AiFillEdit, AiFillDelete } from "react-icons/ai"
 import { GrFormView } from "react-icons/gr"
 
 
-export const ProductView = ({ product, confirmProductDelete, openProductView }) => {
+export const ProductView = ({ product, confirmProductDelete, openProductView, openProductEdit }) => {
 
 
     return (
@@ -18,7 +18,7 @@ export const ProductView = ({ product, confirmProductDelete, openProductView }) 
             <td>{product.user.user.first_name} {product.user.user.last_name}</td>
             <td><button
                         className="edit_product"
-                        onClick={() => { history.push("/products/edit") }}>{AiFillEdit()}</button>
+                        onClick={openProductEdit}>{AiFillEdit()}</button>
                 <button
                         className="delete_product"
                         onClick={confirmProductDelete}>{AiFillDelete()}</button>

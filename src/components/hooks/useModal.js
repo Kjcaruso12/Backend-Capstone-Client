@@ -51,3 +51,21 @@ export const useModalStock = (selector) => {
     return { toggleStockDialog, stockModalIsOpen }
 }
 
+export const useModalProductForm = (selector) => {
+
+    const [productFormModalIsOpen, setProductFormModalIsOpen] = useState(false)
+
+    const toggleProductFormDialog = () => {
+        setProductFormModalIsOpen(!productFormModalIsOpen)
+
+        if (productFormModalIsOpen) {
+            document.querySelector(`${selector}`).removeAttribute("open")
+        } else {
+            document.querySelector(`${selector}`).setAttribute("open", true)
+        }
+    }
+
+    return { toggleProductFormDialog, productFormModalIsOpen }
+}
+
+
