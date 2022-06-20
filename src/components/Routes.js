@@ -7,7 +7,7 @@ import { Groups } from "./groups/GroupList";
 export const RouteViews = () => {
     return (
         <div className="main-content">
-            <Route path="/">
+            <Route exact path="/">
                 <Dashboard />
             </Route>
             <Route path="/inventory">

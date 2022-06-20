@@ -22,7 +22,7 @@ li.active {
 }
 
 .top_nav {
-  background-color: green;
+  background-color: #6495ED;
   height: 80px;
   display: flex;
   align-items: center;
