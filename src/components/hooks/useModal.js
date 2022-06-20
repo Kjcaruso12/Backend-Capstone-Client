@@ -68,4 +68,39 @@ export const useModalProductForm = (selector) => {
     return { toggleProductFormDialog, productFormModalIsOpen }
 }
 
+export const useModalGroupForm = (selector) => {
+
+    const [groupFormModalIsOpen, setGroupFormModalIsOpen] = useState(false)
+
+    const toggleGroupFormDialog = () => {
+        setGroupFormModalIsOpen(!groupFormModalIsOpen)
+
+        if (groupFormModalIsOpen) {
+            document.querySelector(`${selector}`).removeAttribute("open")
+        } else {
+            document.querySelector(`${selector}`).setAttribute("open", true)
+        }
+    }
+
+    return { toggleGroupFormDialog, groupFormModalIsOpen }
+}
+
+export const useModalGroupDelete = (selector) => {
+
+    const [groupDeleteModalIsOpen, setGroupDeleteModalIsOpen] = useState(false)
+
+    const toggleGroupDeleteDialog = () => {
+        setGroupDeleteModalIsOpen(!groupDeleteModalIsOpen)
+
+        if (groupDeleteModalIsOpen) {
+            document.querySelector(`${selector}`).removeAttribute("open")
+        } else {
+            document.querySelector(`${selector}`).setAttribute("open", true)
+        }
+    }
+
+    return { toggleGroupDeleteDialog, groupDeleteModalIsOpen }
+}
+
+
 

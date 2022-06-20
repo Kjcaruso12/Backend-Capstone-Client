@@ -18,7 +18,7 @@ export const Inventory = () => {
 
     const fetchProducts = () => {
         getProducts()
-                .then(setAllProducts)
+            .then(setAllProducts)
     }
 
     useEffect(
@@ -96,11 +96,22 @@ export const Inventory = () => {
         toggleProductFormDialog()
     }
 
+    const openProductCreate = () => {
+        setEditMode(false)
+        toggleProductFormDialog()
+    }
+
     return (
         <div className="product_list">
-            <ProductDialogForm toggleProductFormDialog={toggleProductFormDialog} currentProduct={currentProduct} editMode={editMode} />
-            <ProductDialogDelete toggleProductDeleteDialog={toggleProductDeleteDialog} currentProduct={currentProduct} />
+            <ProductDialogForm toggleProductFormDialog={toggleProductFormDialog} currentProduct={currentProduct} setCurrentProduct={setCurrentProduct} editMode={editMode} fetchProducts={fetchProducts} />
+            <ProductDialogDelete toggleProductDeleteDialog={toggleProductDeleteDialog} currentProduct={currentProduct} fetchProducts={fetchProducts} />
             <ProductDialogView toggleViewDialog={toggleViewDialog} toggleStockDialog={toggleStockDialog} currentProduct={currentProduct} fetchProducts={fetchProducts} setCurrentProduct={setCurrentProduct} />
+            <div className="inventory_header">
+                <h2>Inventory Management</h2>
+                <button
+                    className="create_product"
+                    onClick={() => openProductCreate()}>Add Item</button>
+            </div>
             <table>
                 <thead>
                     <tr>

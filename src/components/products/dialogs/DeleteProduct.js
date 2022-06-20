@@ -1,7 +1,13 @@
 import React from "react"
 import { deleteProduct } from "../ProductsManager"
 
-export const ProductDialogDelete = ({ toggleProductDeleteDialog, currentProduct }) => {
+export const ProductDialogDelete = ({ toggleProductDeleteDialog, currentProduct, fetchProducts }) => {
+
+    const deleteRefresh = () => {
+        deleteProduct(currentProduct)
+            .then(() => {fetchProducts()})
+        toggleProductDeleteDialog()
+    }
 
     return (
         <dialog id="dialog--product_delete" className="dialog--product_delete">
@@ -10,10 +16,7 @@ export const ProductDialogDelete = ({ toggleProductDeleteDialog, currentProduct 
             </div>
             <div>
                 <button
-                    onClick={() => {
-                        deleteProduct(currentProduct)
-                    }
-                    }>
+                    onClick={() => {deleteRefresh()}}>
                     Confirm
                 </button>
                 <button

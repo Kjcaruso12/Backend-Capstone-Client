@@ -1,5 +1,5 @@
 import React from "react"
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 import { MdOutlineDashboard, MdOutlineInventory2 } from "react-icons/md"
 import { AiOutlineGroup } from "react-icons/ai"
 import { TbFileInvoice, TbUsers } from "react-icons/tb"
@@ -9,32 +9,40 @@ export const SideNavBar = ({ currentUser }) => {
     //   const history = useHistory()
 
     return (
-            <div className="side_bar">
-                <ul>
-                    <li>
-                        <div className="sidebar_icon">{MdOutlineDashboard()}</div>
-                        <div className="dashboard">Dashboard</div>
-                    </li>
-                    <li>
+        <div className="side_bar">
+            <ul>
+                <li>
+                    <div className="sidebar_icon">{MdOutlineDashboard()}</div>
+                    <div className="dashboard">Dashboard</div>
+                </li>
+                <li>
+                    <Link
+                        className="inventory_link"
+                        to="/inventory">
                         <div className="sidebar_icon">{MdOutlineInventory2()}</div>
                         <div className="inventory">Inventory</div>
-                    </li>
-                    <li>
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        className="groups_link"
+                        to="/groups">
                         <div className="sidebar_icon">{AiOutlineGroup()}</div>
                         <div className="groups">Groups</div>
-                    </li>
+                    </Link>
+                </li>
+                <li>
+                    <div className="sidebar_icon">{TbFileInvoice()}</div>
+                    <div className="invoices">Invoices</div>
+                </li>
+                {currentUser.admin ?
                     <li>
-                        <div className="sidebar_icon">{TbFileInvoice()}</div>
-                        <div className="invoices">Invoices</div>
+                        <div className="sidebar_icon">{TbUsers()}</div>
+                        <div className="users">User Management</div>
                     </li>
-                    {currentUser.admin ?
-                        <li>
-                            <div className="sidebar_icon">{TbUsers()}</div>
-                            <div className="users">User Management</div>
-                        </li>
-                        : ""
-                    }
-                </ul>
-            </div>
+                    : ""
+                }
+            </ul>
+        </div>
     )
 }
