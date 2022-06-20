@@ -4,9 +4,9 @@ import { deleteProduct } from "../ProductsManager"
 export const ProductDialogDelete = ({ toggleProductDeleteDialog, currentProduct }) => {
 
     return (
-        <dialog id="dialog--delete_product" className="dialog--delete_product">
+        <dialog id="dialog--product_delete" className="dialog--product_delete">
             <div>
-                <h2>Are you sure you want to delete this guide?</h2>
+                <h2>Are you sure you want to delete this product?</h2>
             </div>
             <div>
                 <button

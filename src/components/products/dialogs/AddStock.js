@@ -1,28 +1,42 @@
 import React, { useState } from "react"
-import { editProduct } from "../ProductsManager"
+import { editProduct, getSingleProduct } from "../ProductsManager"
 
-export const ProductDialogAddStock = ({ toggleStockDialog, currentProduct }) => {
+export const ProductDialogAddStock = ({ toggleStockDialog, currentProduct, fetchProducts, setCurrentProduct }) => {
 
-    const [updatedStock, setUpdatedStock] = useState(currentProduct)
+    const [quantity, setQuantity] = useState(0)
 
-    const updateStock = (event) => {
-        let copy = [...updatedStock]
-        copy['quantity'] += event.target.value
-        setUpdatedStock(copy)
+    const updatedStock = {
+        id: currentProduct.id,
+        name: currentProduct.name,
+        price: currentProduct.price,
+        description: currentProduct.description,
+        quantity: currentProduct.quantity + quantity,
+        image_path: currentProduct.image_path,
+        group_id: currentProduct.group.id
+    }
+
+    const fetchUpdatedProduct = () => {
+        getSingleProduct(updatedStock)
+            .then(setCurrentProduct)
+    }
+
+    const updateStock = () => {
+        editProduct(updatedStock)
+            .then(() => fetchProducts())
+                .then(() => fetchUpdatedProduct())
+        setQuantity(0)
+        toggleStockDialog()
     }
 
     return (
         <dialog id="dialog--stock" className="dialog--stock">
             <div>
                 <h2>How much stock would you like to add?</h2>
-                <input value={updatedStock.quantity} type="number" name="quantity" onChange={updateStock} required />
+                <input value={quantity} type="number" name="quantity" onChange={(e) => setQuantity(parseInt(e.target.value))} required />
             </div>
             <div>
                 <button
-                    onClick={() => {
-                        editProduct(updatedStock)
-                    }
-                    }>
+                    onClick={updateStock}>
                     Confirm
                 </button>
                 <button

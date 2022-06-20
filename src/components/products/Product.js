@@ -9,7 +9,9 @@ export const ProductView = ({ product, confirmProductDelete, openProductView, op
     return (
         <tr className="single_product">
             <td>{product.id}</td>
-            <td>{product.image_path != null ? product.image_path : "N/A"}</td>
+            <td>{product.image_path != null ?
+                <img src={product.image_path} alt="product_image" />
+                : "N/A"}</td>
             <td>{product.name}</td>
             <td>{product.group.label}</td>
             <td>{product.price}</td>
@@ -18,13 +20,13 @@ export const ProductView = ({ product, confirmProductDelete, openProductView, op
             <td>{product.user.user.first_name} {product.user.user.last_name}</td>
             <td><button
                         className="edit_product"
-                        onClick={openProductEdit}>{AiFillEdit()}</button>
+                        onClick={() => openProductEdit(product)}>{AiFillEdit()}</button>
                 <button
                         className="delete_product"
-                        onClick={confirmProductDelete}>{AiFillDelete()}</button>
+                        onClick={() => confirmProductDelete(product)}>{AiFillDelete()}</button>
                 <button
                         className="view_product"
-                        onClick={openProductView}>{GrFormView()}</button>
+                        onClick={() => openProductView(product)}>{GrFormView()}</button>
             </td>
         </tr>
     )
