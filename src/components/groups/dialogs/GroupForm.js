@@ -36,7 +36,8 @@ export const GroupDialogForm = ({ toggleGroupFormDialog, currentGroup, setCurren
         }
         else {
             addGroup(label)
-                .then(() => fetchGroups())
+            setLabel({ label: ""})
+            fetchGroups()
         }
         toggleGroupFormDialog()
     }

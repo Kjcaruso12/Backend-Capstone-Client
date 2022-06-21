@@ -41,23 +41,30 @@ export const ProductDialogForm = ({ toggleProductFormDialog, currentProduct, set
     }
 
     const submitProduct = () => {
-        const updatedProduct = {
-            id: currentProduct.id,
-            name: currentProduct.name,
-            price: currentProduct.price,
-            description: currentProduct.description,
-            quantity: currentProduct.quantity,
-            image_path: currentProduct.image_path,
-            group_id: currentProduct.group.id
-        }
-
         if (editMode) {
+            const updatedProduct = {
+                id: currentProduct.id,
+                name: currentProduct.name,
+                price: currentProduct.price,
+                description: currentProduct.description,
+                quantity: currentProduct.quantity,
+                image_path: currentProduct.image_path,
+                group_id: currentProduct.group.id
+            }
             editProduct(updatedProduct)
                 .then(() => fetchProducts())
         }
         else {
             addProduct(newProduct)
-                .then(() => fetchProducts())
+            setNewProduct({
+                name: "",
+                price: 0,
+                description: "",
+                quantity: 0,
+                image_path: "",
+                group_id: 0
+            })
+            fetchProducts()
         }
         toggleProductFormDialog()
     }

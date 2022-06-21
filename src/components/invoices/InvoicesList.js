@@ -44,6 +44,7 @@ export const Invoices = () => {
                     <tr>
                         <th>Invoice Id</th>
                         <th>Number of Items</th>
+                        <th>Total</th>
                         <th>Created By</th>
                         <th>Added On</th>
                         <th>Actions</th>

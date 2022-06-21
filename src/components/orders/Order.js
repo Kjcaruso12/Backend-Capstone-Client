@@ -1,11 +1,12 @@
 import { removeFromOrder } from "../invoices/InvoiceManager"
 import { TiDeleteOutline } from "react-icons/ti"
 
-export const OrderView = ({ product, refreshCart }) => {
+export const OrderView = ({ product, refreshCart, refreshOrder }) => {
 
     const updateCart = (updatedProduct) => {
-        removeFromOrder(updatedProduct.order)
+        removeFromOrder(updatedProduct.product)
             .then(() => refreshCart())
+                .then(() => refreshOrder())
     }
 
     return (

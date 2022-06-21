@@ -6,7 +6,8 @@ export const InvoiceView = ({ invoice, confirmInvoiceDelete }) => {
     return (
         <tr className="single_invoice">
             <td>{invoice.id}</td>
-            <td>{invoice.order.number_purchased}</td>
+            <td>{invoice.number_purchased}</td>
+            <td>{invoice.total}</td>
             <td>{invoice.inventoryUser.user.first_name} {invoice.inventoryUser.user.last_name}</td>
             <td>{invoice.invoiceDate}</td>
             <td>

@@ -34,7 +34,7 @@ export const ProductView = ({ product, confirmProductDelete, openProductView, op
     )
 }
 
-export const InvoiceProductView = ({ product, refreshCart }) => {
+export const InvoiceProductView = ({ product, refreshCart, refreshOrder }) => {
 
     const [newProduct, setNewProduct] = useState({
         id: product.id,
@@ -50,6 +50,7 @@ export const InvoiceProductView = ({ product, refreshCart }) => {
     const updateCart = (updatedProduct) => {
         addToOrder(updatedProduct)
             .then(() => refreshCart())
+            .then(() => refreshOrder())
             .then(() => {
                 setNewProduct({
                     id: product.id,

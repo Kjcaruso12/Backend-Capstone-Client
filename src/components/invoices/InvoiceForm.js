@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { InvoiceProductView } from "../products/Product"
 import { getProducts } from "../products/ProductsManager"
-import { getCurrentOrder, getAllOrderProducts, addInvoice, deleteOrder } from "./InvoiceManager"
+import { getCurrentOrder, getAllOrderProducts, addInvoice, deleteOrder, completeOrder } from "./InvoiceManager"
 import { useHistory } from "react-router-dom"
 import { OrderView } from "../orders/Order"
 
@@ -36,13 +36,20 @@ export const InvoiceForm = () => {
         const updatedInvoice = {
             order_id: currentOrder.id
         }
+
         addInvoice(updatedInvoice)
-            .then(() => { history.push("/invoices") })
+            .then(() => completeOrder(currentOrder))
+                .then(() => { history.push("/invoices") })
     }
 
     const refreshCart = () => {
         getAllOrderProducts()
             .then(setAllOrderProducts)
+    }
+
+    const refreshOrder = () => {
+        getCurrentOrder()
+            .then(setCurrentOrder)
     }
 
     const clearCart = () => {
@@ -72,6 +79,7 @@ export const InvoiceForm = () => {
                             <InvoiceProductView key={`product--${product.id}`}
                                 product={product}
                                 refreshCart={refreshCart}
+                                refreshOrder={refreshOrder}
                             />)}
                     </tbody>
                 </table>
@@ -95,6 +103,7 @@ export const InvoiceForm = () => {
                                         <OrderView key={`product--${product.id}`}
                                             product={product}
                                             refreshCart={refreshCart}
+                                            refreshOrder={refreshOrder}
                                         />)
                                     : <div></div>
                                 }

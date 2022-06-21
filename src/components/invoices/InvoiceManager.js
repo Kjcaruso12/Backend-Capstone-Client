@@ -10,7 +10,7 @@ export const getAllOrderProducts = () => {
 }
 
 export const addInvoice = (invoice) => {
-    return fetchIt(`${Settings.API}/invoices}`, "POST", JSON.stringify(invoice))
+    return fetchIt(`${Settings.API}/invoices`, "POST", JSON.stringify(invoice))
 }
 
 export const deleteInvoice = (invoice) => {
@@ -27,6 +27,10 @@ export const getCurrentOrder = () => {
 
 export const addToOrder = (product) => {
     return fetchIt(`${Settings.API}/products/${product.id}/add_to_order`, "POST", JSON.stringify(product))
+}
+
+export const completeOrder = (order) => {
+    return fetchIt(`${Settings.API}/orders/${order.id}/complete`, "PUT", JSON.stringify(order))
 }
 
 export const removeFromOrder = (product) => {
