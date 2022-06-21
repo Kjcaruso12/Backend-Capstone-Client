@@ -8,16 +8,27 @@ import "./NavBar.css"
 export const SideNavBar = ({ currentUser }) => {
     //   const history = useHistory()
 
+    const style = {
+        textDecoration: 'none',
+        color: 'black'
+    }
+
     return (
         <div className="side_bar">
             <ul>
                 <li>
-                    <div className="sidebar_icon">{MdOutlineDashboard()}</div>
-                    <div className="dashboard">Dashboard</div>
+                    <Link
+                        className="sidenav_link"
+                        style={style}
+                        to="/">
+                        <div className="sidebar_icon">{MdOutlineDashboard()}</div>
+                        <div className="dashboard">Dashboard</div>
+                    </Link>
                 </li>
                 <li>
                     <Link
-                        className="inventory_link"
+                        className="sidenav_link"
+                        style={style}
                         to="/inventory">
                         <div className="sidebar_icon">{MdOutlineInventory2()}</div>
                         <div className="inventory">Inventory</div>
@@ -25,15 +36,21 @@ export const SideNavBar = ({ currentUser }) => {
                 </li>
                 <li>
                     <Link
-                        className="groups_link"
+                        className="sidenav_link"
+                        style={style}
                         to="/groups">
                         <div className="sidebar_icon">{AiOutlineGroup()}</div>
                         <div className="groups">Groups</div>
                     </Link>
                 </li>
                 <li>
-                    <div className="sidebar_icon">{TbFileInvoice()}</div>
-                    <div className="invoices">Invoices</div>
+                    <Link
+                        className="sidenav_link"
+                        style={style}
+                        to="/invoices">
+                        <div className="sidebar_icon">{TbFileInvoice()}</div>
+                        <div className="invoices">Invoices</div>
+                    </Link>
                 </li>
                 {currentUser.admin ?
                     <li>

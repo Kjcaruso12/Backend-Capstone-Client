@@ -1,6 +1,10 @@
 .product_list {
     background-color: white;
+    height: 95%;
+    width: 98%;
     padding: 20px;
+    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .inventory_header {

@@ -6,7 +6,7 @@ export const getGroups = () => {
 }
 
 export const addGroup = (group) => {
-    return fetchIt(`${Settings.API}/groups}`, "POST", JSON.stringify(group))
+    return fetchIt(`${Settings.API}/groups`, "POST", JSON.stringify(group))
 }
 
 export const deleteGroup = (group) => {

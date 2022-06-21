@@ -1,0 +1,48 @@
+.invoice_container {
+    display: flex;
+    justify-content: space-between;
+    height: 95%;
+    padding: 10px;
+}
+
+.invoice_list {
+    background-color: white;
+    height: 95%;
+    width: 98%;
+    padding: 20px;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
+.invoice_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inventory_invoice {
+    background-color: white;
+    height: 95%;
+    width: 55%;
+    padding: 20px;
+}
+
+.inventory_header {
+    display: flex;
+}
+
+.cart_container {
+    height: 50%;
+    width: 35%;
+    padding-right: 40px;
+}
+
+.order_cart {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+
+.order_input {
+    width: 2rem;
+}

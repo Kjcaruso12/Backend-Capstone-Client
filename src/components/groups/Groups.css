@@ -1,6 +1,10 @@
 .group_list {
     background-color: white;
+    height: 95%;
+    width: 98%;
     padding: 20px;
+    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .group_header {

@@ -24,7 +24,8 @@ export const GroupDialogForm = ({ toggleGroupFormDialog, currentGroup, setCurren
         }
     }
 
-    const submitGroup = () => {
+    const submitGroup = (event) => {
+        event.preventDefault()
         if (editMode) {
             const updatedGroup = {
                 id: currentGroup.id,
@@ -75,7 +76,7 @@ export const GroupDialogForm = ({ toggleGroupFormDialog, currentGroup, setCurren
             }
             <div>
                 <button className="submit-button"
-                    onClick={() => submitGroup()}>
+                    onClick={(event) => submitGroup(event)}>
                     Submit
                 </button>
             </div>

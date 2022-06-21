@@ -102,5 +102,38 @@ export const useModalGroupDelete = (selector) => {
     return { toggleGroupDeleteDialog, groupDeleteModalIsOpen }
 }
 
+export const useModalInvoiceDelete = (selector) => {
+
+    const [invoiceDeleteModalIsOpen, setInvoiceDeleteModalIsOpen] = useState(false)
+
+    const toggleInvoiceDeleteDialog = () => {
+        setInvoiceDeleteModalIsOpen(!invoiceDeleteModalIsOpen)
+
+        if (invoiceDeleteModalIsOpen) {
+            document.querySelector(`${selector}`).removeAttribute("open")
+        } else {
+            document.querySelector(`${selector}`).setAttribute("open", true)
+        }
+    }
+
+    return { toggleInvoiceDeleteDialog, invoiceDeleteModalIsOpen }
+}
+
+export const useModalInvoiceForm = (selector) => {
+
+    const [invoiceFormModalIsOpen, setInvoiceFormModalIsOpen] = useState(false)
+
+    const toggleInvoiceFormDialog = () => {
+        setInvoiceFormModalIsOpen(!invoiceFormModalIsOpen)
+
+        if (invoiceFormModalIsOpen) {
+            document.querySelector(`${selector}`).removeAttribute("open")
+        } else {
+            document.querySelector(`${selector}`).setAttribute("open", true)
+        }
+    }
+
+    return { toggleInvoiceFormDialog, invoiceFormModalIsOpen }
+}
 
 

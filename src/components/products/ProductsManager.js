@@ -10,7 +10,7 @@ export const getSingleProduct = (product) => {
 }
 
 export const addProduct = (product) => {
-    return fetchIt(`${Settings.API}/products}`, "POST", JSON.stringify(product))
+    return fetchIt(`${Settings.API}/products`, "POST", JSON.stringify(product))
 }
 
 export const deleteProduct = (product) => {

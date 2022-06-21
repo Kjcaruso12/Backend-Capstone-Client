@@ -100,3 +100,7 @@ li.active {
 .sidebar_icon {
   margin-right: 10px;
 }
+
+.sidenav_link {
+  display: flex;
+}
