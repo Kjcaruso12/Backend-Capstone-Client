@@ -32,6 +32,8 @@ li.active {
 
 .company_logo {
   color: white;
+  font-size: 14px;
+  margin-left: -.5rem;
 }
 
 /* Dropdown Button */
@@ -43,7 +45,7 @@ li.active {
   color: white;
   font-size: 16px;
   border-radius: 25px;
-  padding: 3px 2px 2px 2px;
+  padding: .5rem;
   width: 100%;
   cursor: pointer;
 }
@@ -55,7 +57,6 @@ li.active {
 }
 
 .profile_dropdown {
-  width: 100px;
   border-radius: 25%;
 }
 
@@ -63,7 +64,7 @@ li.active {
 .dropdown {
   background-color: lightgray;
   position: absolute;
-  min-width: 100px;
+  min-width: 150px;
   overflow: hidden;
 }
 

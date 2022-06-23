@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-evenly;
     height: 15%;
+    margin-bottom: 2rem;
 }
 
 .total_items_container {
@@ -90,4 +91,65 @@
     font-size: 34px;
     margin-top: 1rem;
     color: green;
+}
+
+.dashboard_content {
+    height: 81%;
+}
+
+.top_items_container {
+    background-color: white;
+    border-radius: 25px;
+    width: 62.5%;
+    height: 100%;
+    margin-left: 2.5rem;
+}
+
+.top_items_padding {
+    padding: 20px;
+    height: 95%;
+}
+
+.top_items_header {
+    margin: 0rem;
+}
+
+.top_selling_list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.product_card {
+    background-color: rgb(198, 215, 231);
+    border-radius: 25px;
+    width: 21%;
+    height: 25%;
+    margin-top: 1rem;
+}
+
+.image_container {
+    background-color: rgb(172, 193, 214);
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px 0;
+    height: 50%;
+}
+
+.card_info {
+    padding: 10px 20px;
+}
+
+.top_selling_name {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.top_selling_count {
+}
+
+.top_selling_image {
+    max-width: 100px;
+    max-height: 75px;
 }

@@ -5,6 +5,10 @@ export const getProducts = () => {
     return fetchIt(`${Settings.API}/products`)
 }
 
+export const getTopProducts = () => {
+    return fetchIt(`${Settings.API}/products/top_selling`)
+}
+
 export const getSingleProduct = (product) => {
     return fetchIt(`${Settings.API}/products/${product.id}`)
 }

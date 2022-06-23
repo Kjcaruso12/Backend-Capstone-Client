@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react"
-import { PieChart, Pie } from "recharts"
-import { getProducts } from "../products/ProductsManager"
+import { getProducts, getTopProducts } from "../products/ProductsManager"
 import { getGroups } from "../groups/GroupManager"
 import { getUsers } from "../users/UserManager"
 import { MdOutlineInventory2 } from "react-icons/md"
 import { AiOutlineGroup } from "react-icons/ai"
 import { TbUsers } from "react-icons/tb"
+import { TopSellingList } from "../products/TopSellingList"
 import "./Dashboard.css"
 
 export const Dashboard = () => {
 
+    const [topProducts, setTopProducts] = useState()
     const [products, setProducts] = useState()
     const [groups, setGroups] = useState()
     const [users, setUsers] = useState()
@@ -19,6 +20,14 @@ export const Dashboard = () => {
             getProducts()
                 .then(setProducts)
         }, []
+    )
+
+    useEffect(
+        () => {
+            getTopProducts()
+                .then(setTopProducts)
+        }
+        , []
     )
 
     useEffect(
@@ -84,7 +93,19 @@ export const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <div></div>
+            <div className="dashboard_content">
+                <div className="top_items_container">
+                    <div className="top_items_padding">
+                        <h2 className="top_items_header">
+                            Top Selling Items
+                        </h2>
+                        <TopSellingList topProducts={topProducts} />
+                    </div>
+                </div>
+                <div className="total_sales_container">
+
+                </div>
+            </div>
         </div>
     )
 }
