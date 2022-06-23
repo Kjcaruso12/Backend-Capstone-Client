@@ -1,5 +1,6 @@
 import React from "react"
 import { AiFillEdit, AiFillDelete } from "react-icons/ai"
+import { FormatDate } from "../utils/FormatDate"
 
 export const GroupView = ({ group, confirmGroupDelete, openGroupEdit }) => {
 
@@ -8,7 +9,7 @@ export const GroupView = ({ group, confirmGroupDelete, openGroupEdit }) => {
             <td>{group.id}</td>
             <td>{group.label}</td>
             <td>{group.product_count}</td>
-            <td>{group.created_on}</td>
+            <td>{FormatDate(group.created_on)}</td>
             <td><button
                         className="edit_group"
                         onClick={() => openGroupEdit(group)}>{AiFillEdit()}</button>

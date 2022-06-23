@@ -107,7 +107,7 @@ export const Inventory = () => {
             <ProductDialogDelete toggleProductDeleteDialog={toggleProductDeleteDialog} currentProduct={currentProduct} fetchProducts={fetchProducts} />
             <ProductDialogView toggleViewDialog={toggleViewDialog} toggleStockDialog={toggleStockDialog} currentProduct={currentProduct} fetchProducts={fetchProducts} setCurrentProduct={setCurrentProduct} />
             <div className="inventory_header">
-                <h2>Inventory Management</h2>
+                <h2 className="header">Inventory Management</h2>
                 <button
                     className="create_product"
                     onClick={() => openProductCreate()}>Add Item</button>

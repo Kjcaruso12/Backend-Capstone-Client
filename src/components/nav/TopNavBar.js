@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
-import { getProfile } from "../users/UserManager"
+import React, { useState } from "react"
 import { ProfileNavDropDown } from "./ProfileDropdown"
 import { RiArrowDropDownLine } from "react-icons/ri"
 import "./NavBar.css"
@@ -22,7 +20,7 @@ export const TopNavBar = ({ profile }) => {
     profile ?
       <div className="top_nav">
         <div className="company_logo">
-          <h2>Inventory</h2>
+          <h2>All-In1nventory</h2>
         </div>
         <div className="profile_dropdown">
           <button onClick={toggleDropdown} className="profile_button">

@@ -1,0 +1,93 @@
+.dashboard_container {
+    height: 100%;
+}
+
+.dashboard_headers {
+    display: flex;
+    justify-content: space-evenly;
+    height: 15%;
+}
+
+.total_items_container {
+    background-color: white;
+    border-radius: 25px;
+    width: 30%;
+}
+
+.total_items_padding {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.total_items_header {
+    color: gray;
+    margin-bottom: .5rem;
+}
+
+.total_items_count {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.total_items_icon {
+    font-size: 34px;
+    margin-top: 1rem;
+    color: blue;
+}
+
+.total_groups_container {
+    background-color: white;
+    border-radius: 25px;
+    width: 30%;
+}
+
+.total_groups_padding {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.total_groups_header {
+    color: gray;
+    margin-bottom: .5rem;
+}
+
+.total_groups_count {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.total_groups_icon {
+    font-size: 34px;
+    margin-top: 1rem;
+    color: #FF7F50;
+}
+
+.total_users_container {
+    background-color: white;
+    border-radius: 25px;
+    width: 30%;
+}
+
+.total_users_padding {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.total_users_header {
+    color: gray;
+    margin-bottom: .5rem;
+}
+
+.total_users_count {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.total_users_icon {
+    font-size: 34px;
+    margin-top: 1rem;
+    color: green;
+}

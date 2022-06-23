@@ -47,7 +47,7 @@ export const Groups = () => {
             <GroupDialogForm toggleGroupFormDialog={toggleGroupFormDialog} currentGroup={currentGroup} setCurrentGroup={setCurrentGroup} editMode={editMode} fetchGroups={fetchGroups} />
             <GroupDialogDelete toggleGroupDeleteDialog={toggleGroupDeleteDialog} currentGroup={currentGroup} fetchGroups={fetchGroups} />
             <div className="group_header">
-                <h2>Group Management</h2>
+                <h2 className="header">Group Management</h2>
                 <button
                     className="create_group"
                     onClick={() => openGroupCreate()}>Add Group</button>

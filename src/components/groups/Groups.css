@@ -10,4 +10,16 @@
 .group_header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.header {
+    margin-top: .5rem;
+}
+
+.create_group {
+    background-color: #77a2f1;
+    color: white;
+    height: 50px;
+    width: 100px;
 }

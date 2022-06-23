@@ -1,5 +1,5 @@
 import React from "react"
-import { useHistory, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { MdOutlineDashboard, MdOutlineInventory2 } from "react-icons/md"
 import { AiOutlineGroup } from "react-icons/ai"
 import { TbFileInvoice, TbUsers } from "react-icons/tb"

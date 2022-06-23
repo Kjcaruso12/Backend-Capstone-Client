@@ -7,7 +7,54 @@
     overflow-y: hidden;
 }
 
+.product_image {
+    padding: 5px 0;
+}
+
 .inventory_header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.header {
+    margin-top: .5rem;
+}
+
+.create_product {
+    background-color: #77a2f1;
+    color: white;
+    height: 50px;
+    width: 100px;
+}
+
+.delete_product {
+    margin: 0 .2rem 0 .2rem;
+    color: red;
+    background-color: white;
+    border: none;
+}
+
+.delete_product:hover {
+    background-color: rgb(168, 168, 168);
+}
+
+.edit_product {
+    color: blue;
+    background-color: white;
+    border: none;
+}
+
+.edit_product:hover {
+    background-color: rgb(168, 168, 168);
+}
+
+.view_product {
+    color: rgb(12, 175, 12);
+    background-color: white;
+    border: none;
+}
+
+.view_product:hover {
+    background-color: rgb(168, 168, 168);
 }

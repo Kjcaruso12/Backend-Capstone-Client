@@ -4,6 +4,7 @@ import { getProducts } from "../products/ProductsManager"
 import { getCurrentOrder, getAllOrderProducts, addInvoice, deleteOrder, completeOrder } from "./InvoiceManager"
 import { useHistory } from "react-router-dom"
 import { OrderView } from "../orders/Order"
+import { FormatDate } from "../utils/FormatDate"
 
 export const InvoiceForm = () => {
     const history = useHistory()
@@ -39,7 +40,7 @@ export const InvoiceForm = () => {
 
         addInvoice(updatedInvoice)
             .then(() => completeOrder(currentOrder))
-                .then(() => { history.push("/invoices") })
+            .then(() => { history.push("/invoices") })
     }
 
     const refreshCart = () => {
@@ -54,7 +55,7 @@ export const InvoiceForm = () => {
 
     const clearCart = () => {
         deleteOrder(currentOrder)
-            .then(() => setCurrentOrder())
+            .then(() => setCurrentOrder({}))
     }
 
     return (
@@ -113,7 +114,10 @@ export const InvoiceForm = () => {
                     <div className="cart_footer">
                         <div className="invoice_date">
                             <div>Date:</div>
-                            <div>{currentOrder?.created_on}</div>
+                            <div>{currentOrder.created_on ?
+                                FormatDate(currentOrder.created_on)
+                                : ""
+                            }</div>
                         </div>
                         <div className="invoice_total">
                             <div>Total:</div>

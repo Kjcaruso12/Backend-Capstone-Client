@@ -26,14 +26,21 @@
     padding: 20px;
 }
 
-.inventory_header {
+.invoice_header {
     display: flex;
+    margin-bottom: 1.5rem;
 }
 
 .cart_container {
     height: 50%;
     width: 35%;
     padding-right: 40px;
+}
+
+.cart_footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15rem;
 }
 
 .order_cart {
@@ -45,4 +52,15 @@
 
 .order_input {
     width: 2rem;
+}
+
+.header {
+    margin-top: .5rem;
+}
+
+.create_invoice {
+    background-color: #77a2f1;
+    color: white;
+    height: 50px;
+    width: 120px;
 }

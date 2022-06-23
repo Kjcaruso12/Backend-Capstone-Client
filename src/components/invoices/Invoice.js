@@ -1,5 +1,6 @@
 import React from "react"
 import { AiFillDelete } from "react-icons/ai"
+import { FormatDate } from "../utils/FormatDate"
 
 export const InvoiceView = ({ invoice, confirmInvoiceDelete }) => {
 
@@ -9,7 +10,7 @@ export const InvoiceView = ({ invoice, confirmInvoiceDelete }) => {
             <td>{invoice.number_purchased}</td>
             <td>{invoice.total}</td>
             <td>{invoice.inventoryUser.user.first_name} {invoice.inventoryUser.user.last_name}</td>
-            <td>{invoice.invoiceDate}</td>
+            <td>{FormatDate(invoice.invoiceDate)}</td>
             <td>
                 <button
                         className="delete_invoice"

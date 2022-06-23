@@ -5,7 +5,7 @@ export const GroupDialogDelete = ({ toggleGroupDeleteDialog, currentGroup, fetch
 
     const deleteRefresh = () => {
         deleteGroup(currentGroup)
-            .then(() => {fetchGroups()})
+            .then(() => fetchGroups())
         toggleGroupDeleteDialog()
     }
 

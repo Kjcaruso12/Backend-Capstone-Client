@@ -34,7 +34,7 @@ export const Invoices = () => {
         <div className="invoice_list">
             <InvoiceDialogDelete toggleInvoiceDeleteDialog={toggleInvoiceDeleteDialog} currentInvoice={currentInvoice} />
             <div className="invoice_header">
-                <h2>Invoice Management</h2>
+                <h2 className="header">Invoice Management</h2>
                 <button
                     className="create_invoice"
                     onClick={() => history.push("/invoices/create")}>Create Invoice</button>

@@ -3,6 +3,7 @@ import { addToOrder } from "../invoices/InvoiceManager"
 import { AiFillEdit, AiFillDelete } from "react-icons/ai"
 import { GrFormView } from "react-icons/gr"
 import { IoMdAdd } from "react-icons/io"
+import { FormatDate } from "../utils/FormatDate"
 
 
 export const ProductView = ({ product, confirmProductDelete, openProductView, openProductEdit }) => {
@@ -12,13 +13,13 @@ export const ProductView = ({ product, confirmProductDelete, openProductView, op
         <tr className="single_product">
             <td>{product.id}</td>
             <td>{product.image_path != null ?
-                <img src={product.image_path} alt="product_image" />
+                <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6257/6257384_sd.jpg;maxHeight=75;maxWidth=100" alt="product_image" className="product_image" />
                 : "N/A"}</td>
             <td>{product.name}</td>
             <td>{product.group.label}</td>
             <td>{product.price}</td>
             <td>{product.quantity}</td>
-            <td>{product.created_on}</td>
+            <td>{FormatDate(product.created_on)}</td>
             <td>{product.user.user.first_name} {product.user.user.last_name}</td>
             <td><button
                 className="edit_product"

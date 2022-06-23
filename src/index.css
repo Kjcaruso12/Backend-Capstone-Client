@@ -23,3 +23,24 @@ code {
   flex: 1;
   padding: 30px;
 }
+
+table {
+  width: 100%;
+  border-collapse:collapse;
+}
+
+th {
+  border-right: 1px solid rgb(211, 211, 211);
+  border-left: 1px solid rgb(211, 211, 211);
+  background-color: rgb(243, 243, 243);
+  height: 50px;
+}
+
+tr {
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+td {
+  text-align: center;
+  height: 30px;
+}
